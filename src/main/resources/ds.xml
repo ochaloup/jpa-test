@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><datasources>
+  <xa-datasource jndi-name="java:/XADataSource" pool-name="DataSource_pool" enabled="true" name="DataSource">
+    <xa-datasource-property name="DriverType">4</xa-datasource-property>
+    <xa-datasource-property name="DatabaseName">dballo01</xa-datasource-property>
+    <xa-datasource-property name="PortNumber">3306</xa-datasource-property>
+    <xa-datasource-property name="ServerName">vmg02.mw.lab.eng.bos.redhat.com</xa-datasource-property>
+    <xa-datasource-class>com.mysql.jdbc.jdbc2.optional.MysqlXADataSource</xa-datasource-class>
+    <driver>mysql.jar</driver>
+    <security>
+      <user-name>dballo01</user-name>
+      <password>dballo01</password>
+    </security>
+    <validation>
+      <valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.db2.DB2ValidConnectionChecker"/>
+      <stale-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.db2.DB2StaleConnectionChecker"/>
+      <exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.db2.DB2ExceptionSorter"/>
+    </validation>
+    <recovery>
+      <recover-plugin class-name="org.jboss.jca.core.recovery.ConfigurableRecoveryPlugin"/>
+      <config-property name="EnableIsValid">false</config-property>
+      <config-property name="IsValidOverride">false</config-property>
+      <config-property name="EnableClose">false</config-property>
+    </recovery>
+  </xa-datasource>
+</datasources>
